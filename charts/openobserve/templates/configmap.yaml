@@ -119,6 +119,7 @@ data:
   {{- end }}
   {{- if not .Values.minio.enabled }}
   ZO_S3_BUCKET_NAME: "{{ .Values.config.ZO_S3_BUCKET_NAME }}"
+  ZO_S3_BUCKET_PREFIX: "{{ .Values.config.ZO_S3_BUCKET_PREFIX }}"
   {{- else }}
   ZO_S3_BUCKET_NAME: "{{ (index .Values.minio.buckets 0 ).name }}"
   {{- end }}
